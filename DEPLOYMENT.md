@@ -7,6 +7,9 @@
 
 ## Setup Awal di VPS
 
+### Port Configuration
+Aplikasi ini dikonfigurasi untuk berjalan di **port 5558** baik di dalam container maupun di host VPS.
+
 ### 1. Install Docker di VPS
 ```bash
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -51,7 +54,7 @@ docker pull ghcr.io/azhariazna/coba_coba:latest
 docker stop coba_coba && docker rm coba_coba
 
 # Run container baru
-docker run -d -p 3000:3000 --name coba_coba --restart unless-stopped ghcr.io/azhariazna/coba_coba:latest
+docker run -d -p 5558:5558 --name coba_coba --restart unless-stopped ghcr.io/azhariazna/coba_coba:latest
 ```
 
 ## Versi Image
@@ -90,4 +93,4 @@ docker restart coba_coba
 - Periksa Personal Access Token permissions
 
 ### Port conflict
-- Ubah port mapping di command docker run (misal: `-p 8080:3000`)
+- Ubah port mapping di command docker run (misal: `-p 8080:5558`)

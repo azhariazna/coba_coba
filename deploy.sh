@@ -37,7 +37,7 @@ fi
 echo "🏃 Jalankan container baru..."
 docker run -d \
   --name $CONTAINER_NAME \
-  -p 3000:3000 \
+  -p 5558:5558 \
   --restart unless-stopped \
   $IMAGE_NAME:$IMAGE_TAG
 
@@ -46,4 +46,4 @@ echo "🧹 Cleanup unused images..."
 docker image prune -f
 
 echo "✅ Deployment selesai!"
-echo "🌐 Aplikasi berjalan di http://localhost:3000"
+echo "🌐 Aplikasi berjalan di http://localhost:5558"
